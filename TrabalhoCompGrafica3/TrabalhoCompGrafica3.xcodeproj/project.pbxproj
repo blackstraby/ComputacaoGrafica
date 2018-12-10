@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		74D578DA21BEC320004E5906 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 74D578D921BEC320004E5906 /* main.cpp */; };
+		74D578E221BEC362004E5906 /* GLUT.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D578E121BEC362004E5906 /* GLUT.framework */; };
+		74D578E421BEC36A004E5906 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D578E321BEC36A004E5906 /* Cocoa.framework */; };
+		74D578E621BEC36E004E5906 /* OpenGL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74D578E521BEC36E004E5906 /* OpenGL.framework */; };
+		74D578F121BEC379004E5906 /* image_DXT.c in Sources */ = {isa = PBXBuildFile; fileRef = 74D578EA21BEC379004E5906 /* image_DXT.c */; };
+		74D578F221BEC379004E5906 /* image_helper.c in Sources */ = {isa = PBXBuildFile; fileRef = 74D578EC21BEC379004E5906 /* image_helper.c */; };
+		74D578F321BEC379004E5906 /* SOIL.c in Sources */ = {isa = PBXBuildFile; fileRef = 74D578EF21BEC379004E5906 /* SOIL.c */; };
+		74D578F421BEC379004E5906 /* stb_image_aug.c in Sources */ = {isa = PBXBuildFile; fileRef = 74D578F021BEC379004E5906 /* stb_image_aug.c */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +32,19 @@
 /* Begin PBXFileReference section */
 		74D578D621BEC320004E5906 /* TrabalhoCompGrafica3 */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = TrabalhoCompGrafica3; sourceTree = BUILT_PRODUCTS_DIR; };
 		74D578D921BEC320004E5906 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		74D578E121BEC362004E5906 /* GLUT.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GLUT.framework; path = System/Library/Frameworks/GLUT.framework; sourceTree = SDKROOT; };
+		74D578E321BEC36A004E5906 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		74D578E521BEC36E004E5906 /* OpenGL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGL.framework; path = System/Library/Frameworks/OpenGL.framework; sourceTree = SDKROOT; };
+		74D578E721BEC379004E5906 /* stb_image_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stb_image_aug.h; sourceTree = "<group>"; };
+		74D578E821BEC379004E5906 /* SOIL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SOIL.h; sourceTree = "<group>"; };
+		74D578E921BEC379004E5906 /* stbi_DDS_aug_c.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug_c.h; sourceTree = "<group>"; };
+		74D578EA21BEC379004E5906 /* image_DXT.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_DXT.c; sourceTree = "<group>"; };
+		74D578EB21BEC379004E5906 /* stbi_DDS_aug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = stbi_DDS_aug.h; sourceTree = "<group>"; };
+		74D578EC21BEC379004E5906 /* image_helper.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = image_helper.c; sourceTree = "<group>"; };
+		74D578ED21BEC379004E5906 /* image_DXT.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_DXT.h; sourceTree = "<group>"; };
+		74D578EE21BEC379004E5906 /* image_helper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = image_helper.h; sourceTree = "<group>"; };
+		74D578EF21BEC379004E5906 /* SOIL.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = SOIL.c; sourceTree = "<group>"; };
+		74D578F021BEC379004E5906 /* stb_image_aug.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = stb_image_aug.c; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -32,6 +52,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D578E621BEC36E004E5906 /* OpenGL.framework in Frameworks */,
+				74D578E421BEC36A004E5906 /* Cocoa.framework in Frameworks */,
+				74D578E221BEC362004E5906 /* GLUT.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -43,6 +66,7 @@
 			children = (
 				74D578D821BEC320004E5906 /* TrabalhoCompGrafica3 */,
 				74D578D721BEC320004E5906 /* Products */,
+				74D578E021BEC362004E5906 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,9 +81,29 @@
 		74D578D821BEC320004E5906 /* TrabalhoCompGrafica3 */ = {
 			isa = PBXGroup;
 			children = (
+				74D578EA21BEC379004E5906 /* image_DXT.c */,
+				74D578ED21BEC379004E5906 /* image_DXT.h */,
+				74D578EC21BEC379004E5906 /* image_helper.c */,
+				74D578EE21BEC379004E5906 /* image_helper.h */,
+				74D578EF21BEC379004E5906 /* SOIL.c */,
+				74D578E821BEC379004E5906 /* SOIL.h */,
+				74D578F021BEC379004E5906 /* stb_image_aug.c */,
+				74D578E721BEC379004E5906 /* stb_image_aug.h */,
+				74D578E921BEC379004E5906 /* stbi_DDS_aug_c.h */,
+				74D578EB21BEC379004E5906 /* stbi_DDS_aug.h */,
 				74D578D921BEC320004E5906 /* main.cpp */,
 			);
 			path = TrabalhoCompGrafica3;
+			sourceTree = "<group>";
+		};
+		74D578E021BEC362004E5906 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				74D578E521BEC36E004E5906 /* OpenGL.framework */,
+				74D578E321BEC36A004E5906 /* Cocoa.framework */,
+				74D578E121BEC362004E5906 /* GLUT.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -118,6 +162,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				74D578F221BEC379004E5906 /* image_helper.c in Sources */,
+				74D578F421BEC379004E5906 /* stb_image_aug.c in Sources */,
+				74D578F121BEC379004E5906 /* image_DXT.c in Sources */,
+				74D578F321BEC379004E5906 /* SOIL.c in Sources */,
 				74D578DA21BEC320004E5906 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
