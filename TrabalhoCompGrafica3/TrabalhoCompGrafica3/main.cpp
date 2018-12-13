@@ -32,89 +32,89 @@ GLfloat move_x = 0;
 GLfloat xstep = 0.01f;
 GLfloat ystep = 0.02f;
 
-GLuint texture[6];
+GLuint textura[6];
 
-float tamanho = 0.4f;
+float size = 0.4f;
 
 
 void desenhaCubo() {
 
     // Frente
-    glBindTexture(GL_TEXTURE_2D, texture[3]);
+    glBindTexture(GL_TEXTURE_2D, textura[3]);
     glBegin(GL_QUADS);
     glTexCoord2f(0.0f, 0.0f);
-    glVertex3f(-tamanho, -tamanho, tamanho);
+    glVertex3f(-size, -size, size);
     glTexCoord2f(1.0f, 0.0f);
-    glVertex3f(tamanho, -tamanho, tamanho);
+    glVertex3f(size, -size, size);
     glTexCoord2f(1.0f, 1.0f);
-    glVertex3f(tamanho, tamanho, tamanho);
+    glVertex3f(size, size, size);
     glTexCoord2f(0.0f, 1.0f);
-    glVertex3f(-tamanho, tamanho, tamanho);
+    glVertex3f(-size, size, size);
     glEnd();
     
     // Traseira
-    glBindTexture(GL_TEXTURE_2D, texture[2]);
+    glBindTexture(GL_TEXTURE_2D, textura[2]);
     glBegin(GL_QUADS);
     glTexCoord2f(1.0f, 0.0f);
-    glVertex3f(-tamanho, -tamanho, -tamanho);
+    glVertex3f(-size, -size, -size);
     glTexCoord2f(1.0f, 1.0f);
-    glVertex3f(-tamanho, tamanho, -tamanho);
+    glVertex3f(-size, size, -size);
     glTexCoord2f(0.0f, 1.0f);
-    glVertex3f(tamanho, tamanho, -tamanho);
+    glVertex3f(size, size, -size);
     glTexCoord2f(0.0f, 0.0f);
-    glVertex3f(tamanho, -tamanho, -tamanho);
+    glVertex3f(size, -size, -size);
     glEnd();
     
     // Cima
-    glBindTexture(GL_TEXTURE_2D, texture[0]);
+    glBindTexture(GL_TEXTURE_2D, textura[0]);
     glBegin(GL_QUADS);
     glTexCoord2f(0.0f, 1.0f);
-    glVertex3f(-tamanho, tamanho, -tamanho);
+    glVertex3f(-size, size, -size);
     glTexCoord2f(0.0f, 0.0f);
-    glVertex3f(-tamanho, tamanho, tamanho);
+    glVertex3f(-size, size, size);
     glTexCoord2f(1.0f, 0.0f);
-    glVertex3f(tamanho, tamanho, tamanho);
+    glVertex3f(size, size, size);
     glTexCoord2f(1.0f, 1.0f);
-    glVertex3f(tamanho, tamanho, -tamanho);
+    glVertex3f(size, size, -size);
     glEnd();
     
     // Baixo
-    glBindTexture(GL_TEXTURE_2D, texture[1]);
+    glBindTexture(GL_TEXTURE_2D, textura[1]);
     glBegin(GL_QUADS);
     glTexCoord2f(1.0f, 1.0f);
-    glVertex3f(tamanho, -tamanho, -tamanho);
+    glVertex3f(size, -size, -size);
     glTexCoord2f(0.0f, 1.0f);
-    glVertex3f(-tamanho, -tamanho, -tamanho);
+    glVertex3f(-size, -size, -size);
     glTexCoord2f(0.0f, 0.0f);
-    glVertex3f(-tamanho, -tamanho, tamanho);
+    glVertex3f(-size, -size, size);
     glTexCoord2f(1.0f, 0.0f);
-    glVertex3f(tamanho, -tamanho, tamanho);
+    glVertex3f(size, -size, size);
     glEnd();
     
     // Direita
-    glBindTexture(GL_TEXTURE_2D, texture[4]);
+    glBindTexture(GL_TEXTURE_2D, textura[4]);
     glBegin(GL_QUADS);
     glTexCoord2f(1.0f, 0.0f);
-    glVertex3f(tamanho, -tamanho, -tamanho);
+    glVertex3f(size, -size, -size);
     glTexCoord2f(1.0f, 1.0f);
-    glVertex3f(tamanho, tamanho, -tamanho);
+    glVertex3f(size, size, -size);
     glTexCoord2f(0.0f, 1.0f);
-    glVertex3f(tamanho, tamanho, tamanho);
+    glVertex3f(size, size, size);
     glTexCoord2f(0.0f, 0.0f);
-    glVertex3f(tamanho, -tamanho, tamanho);
+    glVertex3f(size, -size, size);
     glEnd();
     
     // Esquerda
-    glBindTexture(GL_TEXTURE_2D, texture[5]);
+    glBindTexture(GL_TEXTURE_2D, textura[5]);
     glBegin(GL_QUADS);
     glTexCoord2f(0.0f, 0.0f);
-    glVertex3f(-tamanho, -tamanho, -tamanho);
+    glVertex3f(-size, -size, -size);
     glTexCoord2f(1.0f, 0.0f);
-    glVertex3f(-tamanho, -tamanho, tamanho);
+    glVertex3f(-size, -size, size);
     glTexCoord2f(1.0f, 1.0f);
-    glVertex3f(-tamanho, tamanho, tamanho);
+    glVertex3f(-size, size, size);
     glTexCoord2f(0.0f, 1.0f);
-    glVertex3f(-tamanho, tamanho, -tamanho);
+    glVertex3f(-size, size, -size);
     glEnd();
     
 }
@@ -169,7 +169,7 @@ void timer2(int value) {
 void Movimento(int key, int x, int y) {
     
     if (key == GLUT_KEY_RIGHT)
-        rotate_y -= 5;
+        rotate_y += 5;
     
     else if (key == GLUT_KEY_LEFT)
         rotate_y -= 5;
@@ -194,34 +194,34 @@ void Movimento(int key, int x, int y) {
 
 void initTextures() {
     //cima
-    texture[0] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/marco.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+    textura[0] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/marco.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
     
     //baixo
-    texture[1] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/if.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+    textura[1] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/if.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
     
     //frente
-    texture[2] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/dede.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+    textura[2] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/dede.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
     
     //costa
-    texture[3] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/emerson.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+    textura[3] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/emerson.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
     
     //direito
-    texture[4] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/sandro.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+    textura[4] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/sandro.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
     
     //esquerdo
-    texture[5] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/jabur.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
+    textura[5] = SOIL_load_OGL_texture("/Users/jonasgomes/Desktop/Projetos/ComputacaoGrafica/TrabalhoCompGrafica3/TrabalhoCompGrafica3/images/jabur.jpg", SOIL_LOAD_AUTO, SOIL_CREATE_NEW_ID, SOIL_FLAG_INVERT_Y);
 }
 
 
 void inicializa() {
     glEnable(GL_TEXTURE_2D);
     glPixelStorei(GL_UNPACK_ALIGNMENT, 1);
-    glShadeModel(GL_SMOOTH); // Enable Smooth Shading
-    glClearColor(0.0f, 0.0f, 0.0f, 1.0f); // Black Background
-    glClearDepth(1.0f); // Depth Buffer Setup
-    glEnable(GL_DEPTH_TEST); // Enables Depth Testing
-    glDepthFunc(GL_LEQUAL); // The Type Of Depth Testing To Do
-    glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST); // Really Nice Perspective Calculations
+    //glShadeModel(GL_SMOOTH);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
+    glClearDepth(1.0f);
+    glEnable(GL_DEPTH_TEST);
+    glDepthFunc(GL_LEQUAL);
+  //  glHint(GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST);
 }
 
 
@@ -229,8 +229,8 @@ void inicializa() {
 int main(int argc, char* argv[]) {
     glutInit(&argc, argv);
     glutInitDisplayMode(GLUT_DEPTH | GLUT_DOUBLE | GLUT_RGBA);
-    glutInitWindowPosition(150, 120);
-    glutInitWindowSize(500, 500);
+    glutInitWindowPosition(200, 200);
+    glutInitWindowSize(480, 480);
     glutCreateWindow("Trabalho - Cubo Movimento com F5 ou F2");
     
     inicializa();
